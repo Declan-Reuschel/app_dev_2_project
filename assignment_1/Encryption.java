@@ -2,7 +2,7 @@ package assignment_1;
 
 import java.util.ArrayList;
 
-
+//Creation of Java ArrayLists
 class Encryption {
 
 
@@ -42,13 +42,14 @@ class Encryption {
         alphabets.add(letter);
         }
     }
-
+//add a method which takes an integer and returns the alphabet stored at that position 
+    
     public char getChar(int par1Int) {
         
         return alphabets.get(par1Int);
 
     }
-
+//add a method which takes in an alphabetic character and returns the index of the characterin the alphabets list
     public int getCharIndex(char par1Char) {
         
         for (int i = 0; i < alphabets.size(); i++) {
@@ -60,13 +61,13 @@ class Encryption {
     return -1;
 
     }
-
+//add a method which takes an integer and returns the symbol stored at that position 
     public char getSymbol(int par1Int) {
         
         return symbols.get(par1Int);
 
     }
-
+// add a method which takes in a symbol and returns the index of the symbol in the symbols list
     public int getSymbolIndex(char par1Char) {
         
         for (int i = 0; i < symbols.size(); i++) {
@@ -78,9 +79,9 @@ class Encryption {
     return -1;
 
     }
-
+// add a method which takes in a plain-text string and returns the encrypted version of that string 
     public String encryptString(String par1String) {
-
+//method which takes plain-text string to lowercase 
         String str = par1String.toLowerCase();
         String encrypt_str = "";
 
@@ -98,13 +99,13 @@ class Encryption {
                 str_br.append(getSymbol(char_index));
             }
             else return "Error: Invalid Character";
-
+//if an invalid alphabet character is found, return the error string 
           }
 
         return encrypt_str;
 
     }
-
+// adda method which takes in an encrypted string and returns the decrypted version of that string 
     public String decryptString(String par1String) {
 
         String str = par1String.toLowerCase();
