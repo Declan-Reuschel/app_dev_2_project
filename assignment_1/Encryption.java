@@ -71,10 +71,6 @@ class Encryption {
         String str = par1String.toLowerCase();
         String encrypt_str = "";
 
-        StringBuilder str_br = new StringBuilder();
-
-        str_br.append(encrypt_str);
-
         char[] tmpArray = str.toCharArray();
 
         for (int i = 0; i < tmpArray.length; i++) {
@@ -82,7 +78,7 @@ class Encryption {
             int char_index = getCharIndex(tmpArray[i]);
 
             if (char_index != -1) {
-                str_br.append(getSymbol(char_index));
+                encrypt_str += getSymbol(char_index);
             }
             else return "Error: Invalid Character";
             //if an invalid alphabet character is found, return the error string 
