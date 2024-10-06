@@ -16,8 +16,6 @@ public class EncryptionTest {
 
         Encryption();
         System.out.println("Please enter choice: ");
-
-        // please feel free to edit if i messed up anything so far lol - amanda 
     }
 
     // define supporting methods for testing/driver class here

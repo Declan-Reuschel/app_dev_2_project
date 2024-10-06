@@ -107,7 +107,7 @@ class Encryption {
                 str_br.append(getChar(symbol_index));
             }
             else return "Error: Invalid Symbol";
-          }
+        }
         return decrypt_str;
     }
 }
