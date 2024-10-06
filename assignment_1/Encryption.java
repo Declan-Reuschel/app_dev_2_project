@@ -3,7 +3,7 @@ package assignment_1;
 import java.util.ArrayList;
 
 //Creation of Java ArrayLists
-class Encryption {
+public class Encryption {
     ArrayList<Character> symbols = new ArrayList<Character>();
     ArrayList<Character> alphabets = new ArrayList<Character>();
 
@@ -78,7 +78,7 @@ class Encryption {
             int char_index = getCharIndex(tmpArray[i]);
 
             if (char_index != -1) {
-                encrypt_str += getSymbol(char_index);
+                encrypt_str = encrypt_str.concat(Character.toString(getSymbol(char_index)));
             }
             else return "Error: Invalid Character";
             //if an invalid alphabet character is found, return the error string 
@@ -96,7 +96,7 @@ class Encryption {
             int symbol_index = getSymbolIndex(tmpArray[i]);
 
             if (symbol_index != -1) {
-                decrypt_str += getChar(symbol_index);
+                decrypt_str = decrypt_str.concat(Character.toString(getChar(symbol_index)));
             }
             else return "Error: Invalid Symbol";
         }
