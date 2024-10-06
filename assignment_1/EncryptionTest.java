@@ -2,7 +2,7 @@ package assignment_1;
 import java.util.Scanner;
 
 public class EncryptionTest {
-    // main method; add test function calls here
+    // main method
     public static void main(String[] args) {
         Scanner stdin = new Scanner(System.in);
         Encryption encryptor = new Encryption();
