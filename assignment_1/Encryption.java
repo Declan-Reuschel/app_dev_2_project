@@ -90,17 +90,13 @@ class Encryption {
         String str = par1String.toLowerCase();
         String decrypt_str = "";
 
-        StringBuilder str_br = new StringBuilder();
-
-        str_br.append(decrypt_str);
-
         char[] tmpArray = str.toCharArray();
 
         for (int i = 0; i < tmpArray.length; i++) {
             int symbol_index = getSymbolIndex(tmpArray[i]);
 
             if (symbol_index != -1) {
-                str_br.append(getChar(symbol_index));
+                decrypt_str += getChar(symbol_index);
             }
             else return "Error: Invalid Symbol";
         }
