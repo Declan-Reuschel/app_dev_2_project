@@ -25,7 +25,7 @@ public class EncryptionTest {
                 case "2":
                     System.out.println("Enter the encrypted message: ");
                     String encrypted_message = stdin.nextLine();
-                    System.out.println(encryptor.decryptString(encrypted_message));
+                    System.out.println("Decrypted Msg: " + encryptor.decryptString(encrypted_message));
                     break encryption_loop;
                 case "3":
                     break encryption_loop;
