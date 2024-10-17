@@ -1,0 +1,4 @@
+public interface Deductible{
+    boolean deductibleMet();
+    boolean pocketMet();
+}
