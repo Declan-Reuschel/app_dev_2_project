@@ -26,9 +26,9 @@ public class InsuranceTest {
                     System.out.println("Enter deductible amount: ");
                     String par2DeductibleAmount= stdin.nextLine();
                     System.out.println("Enter co-payment: ");
-                    double par3Copay = stdin.nextDouble();
+                    double par3Copay = Double.parseDouble(stdin.nextLine());
                     System.out.println("Enter total out-of-pocket amount: ");
-                    double par4OutOfPocket = stdin.nextDouble();
+                    double par4OutOfPocket = Double.parseDouble(stdin.nextLine());
                     break;
                 case "2":
                     
@@ -37,9 +37,9 @@ public class InsuranceTest {
                     System.out.println("Enter name of beneficiary: ");
                     String par2Beneficiary = stdin.nextLine();
                     System.out.println("Enter number of years in term: ");
-                    int par3Term = stdin.nextInt();
+                    int par3Term = Integer.parseInt(stdin.nextLine());
                     System.out.println("Enter amount of payout: ");
-                    double par4Payout = stdin.nextDouble();
+                    double par4Payout = Double.parseDouble(stdin.nextLine());
                     break;
                 case "3":
                     break insurance_loop;
