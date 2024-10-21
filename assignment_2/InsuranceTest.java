@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class InsuranceTest {
 
-    public static ArrayList insurancePolicies = new ArrayList();
+    private static ArrayList<Insurance> insurancePolicies = new ArrayList<>();
 
     // main method
     public static void main(String[] args) {
@@ -31,6 +31,7 @@ public class InsuranceTest {
                     double par4OutOfPocket = Double.parseDouble(stdin.nextLine());
 
                     Health health = new Health(par1PolicyHolderHealth, par2DeductibleAmount, par3Copay, par4OutOfPocket);
+                    insurancePolicies.add(health);
                     break;
                 case "2":
                     System.out.println("Enter name of policy holder: ");
@@ -43,6 +44,7 @@ public class InsuranceTest {
                     double par4Payout = Double.parseDouble(stdin.nextLine());
 
                     TermLife termlife = new TermLife(par1PolicyHolderTermlife, par2Beneficiary, par3Term, par4Payout);
+                    insurancePolicies.add(termlife);
                     break;
                 case "3":
                     break insurance_loop;
