@@ -12,9 +12,8 @@ public abstract class Insurance {
     public Insurance(String par1String) {
 
         this.policyHolderName = par1String;
-        setNumberOfPolicies(getNumberOfPolicies() + 1);
         this.policyNumber = getNumberOfPolicies();
-
+        setNumberOfPolicies(getNumberOfPolicies() + 1);
     }
 
     public abstract double calculatePremium();
