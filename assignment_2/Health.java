@@ -36,9 +36,8 @@ public class Health extends Insurance implements Deductible {
 
     @Override
     public String toString() {
-        return "Policy Holder Name: " + this.getPolicyHolderName() + "\nPolicy Number: " + this.getPolicyNumber() + "\nPremium Amount:" + String.format("%.2f", this.getPremiumAmount())
-                + "\nDeductible Amount: " + String.format("%.2f", this.getDeductibleAmount()) + "\nDeductible Paid: " + String.format("%.2f", this.getDeductiblePaid())
-                + "\nCopay Amount: " + String.format("%.2f", this.getCopayAmount())+ "\nCopay Paid: " + String.format("%.2f", this.getCopayPaid());
+        return "Policyholder: " + this.getPolicyHolderName() + "\nPolicy Number: " + this.getPolicyNumber() + "\nPremium: " + String.format("%.2f", this.getPremiumAmount())
+                + "\nMet Deductible: " + this.isDeductibleMet() + "\nMet Total Out-Of-Pocket: " + this.isOutOfPocketMet();
     }
 
     // define getters and setters

@@ -28,8 +28,7 @@ public class TermLife extends Insurance {
 
     @Override
     public String toString() {
-        return "Policy Holder Name: " + this.getPolicyHolderName() + "\nPolicy Number: " + this.getPolicyNumber() + "\nPremium Amount:" + String.format("%.2f", this.getPremiumAmount()) +
-                "\nBeneficiary Name: " + this.getBeneficiaryName() + "\nPolicy Term: " + Integer.toString(this.getPolicyTerm()) + "\nTerm Payout: " + String.format("%.2f", this.getTermPayout());
+        return "Policyholder: " + this.getPolicyHolderName() + "\nPolicy Number: " + this.getPolicyNumber() + "\nPremium: " + String.format("%.2f", this.getPremiumAmount());
     }
 
     // define getters and setters

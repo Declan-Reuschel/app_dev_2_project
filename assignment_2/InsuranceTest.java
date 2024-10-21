@@ -47,6 +47,11 @@ public class InsuranceTest {
                     insurancePolicies.add(termlife);
                     break;
                 case "3":
+                    for (Insurance policy: insurancePolicies) {
+                        System.out.println(policy.toString());
+                        System.out.println();
+                    }
+
                     break insurance_loop;
                 default:
                     System.out.println("Error: Please enter valid input\n");
