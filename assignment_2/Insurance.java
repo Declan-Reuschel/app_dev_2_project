@@ -27,7 +27,7 @@ public abstract class Insurance {
     }
 @Override
     public String toString() {
-        return "Policy Holder Name: " + this.getPolicyHolderName() + "\nPolicy Number: " + Integer.toString(this.getPolicyNumber()) + "\nPremium Amount:" + String.format("%.2f", this.getPremiumAmount());
+        return "Policyholder: " + this.getPolicyHolderName() + "\nPolicy Number: " + Integer.toString(this.getPolicyNumber()) + "\nPremium:" + String.format("%.2f", this.getPremiumAmount());
     }
 
     // define getters and setters
