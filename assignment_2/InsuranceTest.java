@@ -24,11 +24,13 @@ public class InsuranceTest {
                     System.out.println("Enter name of policy holder: ");
                     String par1PolicyHolder = stdin.nextLine();
                     System.out.println("Enter deductible amount: ");
-                    String par2DeductibleAmount= stdin.nextLine();
+                    double par2DeductibleAmount= Double.parseDouble(stdin.nextLine());
                     System.out.println("Enter co-payment: ");
                     double par3Copay = Double.parseDouble(stdin.nextLine());
                     System.out.println("Enter total out-of-pocket amount: ");
                     double par4OutOfPocket = Double.parseDouble(stdin.nextLine());
+
+                    Health health = new Health(par1PolicyHolder, par2DeductibleAmount, par3Copay, par4OutOfPocket);
                     break;
                 case "2":
                     System.out.println("Enter name of policy holder: ");
