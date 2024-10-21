@@ -36,7 +36,7 @@ public class Health extends Insurance implements Deductible {
 
     @Override
     public String toString() {
-        return "Policyholder: " + this.getPolicyHolderName() + "\nPolicy Number: " + this.getPolicyNumber() + "\nPremium: " + String.format("%.2f", this.getPremiumAmount())
+        return "Policyholder: " + this.getPolicyHolderName() + "\nPolicy Number: " + this.getPolicyNumber() + "\nPremium: " + String.format("%.2f", this.calculatePremium())
                 + "\nMet Deductible: " + this.isDeductibleMet() + "\nMet Total Out-Of-Pocket: " + this.isOutOfPocketMet();
     }
 
