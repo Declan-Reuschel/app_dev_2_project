@@ -31,7 +31,6 @@ public class InsuranceTest {
                     double par4OutOfPocket = Double.parseDouble(stdin.nextLine());
                     break;
                 case "2":
-                    
                     System.out.println("Enter name of policy holder: ");
                     par1PolicyHolder = stdin.nextLine();
                     System.out.println("Enter name of beneficiary: ");
