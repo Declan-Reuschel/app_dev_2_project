@@ -1,6 +1,6 @@
 package assignment_2;
 
-public interface deductible {
+public interface Deductible {
 
     public abstract boolean isDeductibleMet();
 

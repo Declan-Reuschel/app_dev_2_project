@@ -1,6 +1,6 @@
 package assignment_2;
 
-public abstract class insurance {
+public abstract class Insurance {
 
     private static int numberOfPolicies = 0;
 
@@ -9,7 +9,7 @@ public abstract class insurance {
     private double premiumAmount = 0;
 
 
-    public insurance(String par1String) {
+    public Insurance(String par1String) {
 
         this.policyHolderName = par1String;
         setNumberOfPolicies(getNumberOfPolicies() + 1);

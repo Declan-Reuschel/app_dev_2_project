@@ -1,6 +1,6 @@
 package assignment_2;
 
-public class termLife extends insurance {
+public class TermLife extends Insurance {
 
 
 
@@ -11,7 +11,7 @@ public class termLife extends insurance {
     private int policyTerm;
     private double termPayout;
 
-    public termLife(String par1PolicyHolder, String par2Beneficiary, int par3Term, double par4Payout) {
+    public TermLife(String par1PolicyHolder, String par2Beneficiary, int par3Term, double par4Payout) {
 
         super(par1PolicyHolder);
 

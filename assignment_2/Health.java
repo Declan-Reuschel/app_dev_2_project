@@ -1,6 +1,6 @@
 package assignment_2;
 
-public class health extends insurance implements deductible {
+public class Health extends Insurance implements Deductible {
 
     private double deductibleAmount;
     private double deductiblePaid = 0;
@@ -9,7 +9,7 @@ public class health extends insurance implements deductible {
 
     private double outOfPocketAmount;
 
-    public health(String par1PolicyHolder, double par2Deductible, double par3Copay, double par4OutOfPocket) {
+    public Health(String par1PolicyHolder, double par2Deductible, double par3Copay, double par4OutOfPocket) {
 
         super(par1PolicyHolder);
 
