@@ -11,7 +11,7 @@ public class InsuranceTest {
     public static void main(String[] args) {
         Scanner stdin = new Scanner(System.in);
 
-        encryption_loop: while (true) {
+        insurance_loop: while (true) {
             System.out.println("1 - Create Health Insurance Policy");
             System.out.println("2 - Create Term-Life Insurance Policy");
             System.out.println("3 - Exit");
@@ -21,7 +21,6 @@ public class InsuranceTest {
 
             switch(user_response) {
                 case "1":
-                    
                     System.out.println("Enter name of policy holder: ");
                     String par1PolicyHolder = stdin.nextLine();
                     System.out.println("Enter deductible amount: ");
@@ -30,15 +29,7 @@ public class InsuranceTest {
                     double par3Copay = stdin.nextDouble();
                     System.out.println("Enter total out-of-pocket amount: ");
                     double par4OutOfPocket = stdin.nextDouble();
-
-                    System.out.println("1 - Create Health Insurance Policy");
-                    System.out.println("2 - Create Term-Life Insurance Policy");
-                    System.out.println("3 - Exit");
-                    System.out.println();
-                    System.out.println("Enter choice: ");
-            
-                    break encryption_loop;
-                    
+                    break;
                 case "2":
                     
                     System.out.println("Enter name of policy holder: ");
@@ -49,25 +40,12 @@ public class InsuranceTest {
                     int par3Term = stdin.nextInt();
                     System.out.println("Enter amount of payout: ");
                     double par4Payout = stdin.nextDouble();
-
-                    System.out.println("1 - Create Health Insurance Policy");
-                    System.out.println("2 - Create Term-Life Insurance Policy");
-                    System.out.println("3 - Exit");
-                    System.out.println();
-                    System.out.println("Enter choice: ");
-                    
-                    break encryption_loop;
-                    
+                    break;
                 case "3":
-                    
-                    break encryption_loop;
-                    
+                    break insurance_loop;
                 default:
                     System.out.println("Error: Please enter valid input\n");
             }
         }
-
-        stdin.close();
     }
-
 }
