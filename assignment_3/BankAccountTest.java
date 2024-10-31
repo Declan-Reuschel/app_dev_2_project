@@ -35,6 +35,15 @@ public class BankAccountTest {
                     System.out.println("Enter new user password; password must be at least 8 characters, and include at least one asterisk '*' character: ");
                     String n_user_password = stdin.nextLine();
 
+                    public static void validate(par1ErrorMessage) throws InvalidPasswordFormatException {
+                        if (password.length() < 8 || !password.contains("*")) {
+                            throw new InvalidPasswordFormatException("Password is Invalid.")}
+                    }
+                    // not sure if i did the validation correctly. 
+                        
+
+
+
                     Checking n_account = new Checking(n_customer_name, n_user_id, n_user_password);
                     bankAccounts.add(n_account);
 
