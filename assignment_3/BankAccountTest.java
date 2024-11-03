@@ -9,7 +9,7 @@ public class BankAccountTest {
 
     private static ArrayList<BankAccount> bankAccounts = new ArrayList<>();
 
-    // main method
+    // process main menu, main method
     public static void main(String[] args) {
 
         banking_loop: while (true) {
@@ -25,6 +25,7 @@ public class BankAccountTest {
 
             switch(user_response) {
                 case "1":
+                    //create a new checkung account
                     System.out.println("Enter new customer name: ");
                     String n_customer_name = stdin.nextLine();
                     System.out.println("Enter new user ID: ");
@@ -39,10 +40,8 @@ public class BankAccountTest {
                         if (password.length() < 8 || !password.contains("*")) {
                             throw new InvalidPasswordFormatException("Password is Invalid.")}
                     }
-                    // not sure if i did the validation correctly. 
+                     
                         
-
-
 
                     Checking n_account = new Checking(n_customer_name, n_user_id, n_user_password);
                     bankAccounts.add(n_account);
@@ -52,6 +51,7 @@ public class BankAccountTest {
                     break;
 
                 case "2":
+                    // delete a checking account 
                     System.out.println("Enter user ID: ");
                     String d_user_id= stdin.nextLine();
                     System.out.println("Enter password");
@@ -76,8 +76,9 @@ public class BankAccountTest {
                     break;
 
                 case "3":
+                    //make a deposit 
 
-                    System.out.println("Option 4 - Make An Account Deposit...");
+                    System.out.println("Option 3 - Make An Account Deposit...");
 
                     BankAccount a_account = promptForUserAccount();
                     if (a_account == null) break; // the exception handling itself is handled in promptForUserAccount
@@ -94,6 +95,7 @@ public class BankAccountTest {
                     break;
 
                 case "4":
+                    //make a withdrawl 
 
                     System.out.println("Option 4 - Make An Account Withdrawal...");
 
@@ -113,6 +115,7 @@ public class BankAccountTest {
                     break;
 
                 case "5":
+                    //check account balance 
 
                     System.out.println("Option 5 - Check An Account Balance...");
 
@@ -134,6 +137,7 @@ public class BankAccountTest {
                     System.out.println("Information displayed. Returning to main menu...");
 
                     break;
+                    //terminate program 
 
                 case "6":
                     System.out.println("Exiting program. Have a nice day!");
