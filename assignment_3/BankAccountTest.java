@@ -36,12 +36,13 @@ public class BankAccountTest {
                     System.out.println("Enter new user password; password must be at least 8 characters, and include at least one asterisk '*' character: ");
                     String n_user_password = stdin.nextLine();
 
-                    public static void validate(par1ErrorMessage) throws InvalidPasswordFormatException {
-                        if (password.length() < 8 || !password.contains("*")) {
-                            throw new InvalidPasswordFormatException("Password is Invalid.")}
-                    }
-                     
+                    try {
+                        string password_val = checkPassword( n_user_password):
+                            if (password_val != password.length() <8 || !password.contains("*")) throw new InvalidPasswordFormatException("Password is invalid."):
+                            }
+                    catch(InvalidPasswordFormatException invalidException){
                         
+                        //not sure if i did this right please check over 
 
                     Checking n_account = new Checking(n_customer_name, n_user_id, n_user_password);
                     bankAccounts.add(n_account);
@@ -84,8 +85,12 @@ public class BankAccountTest {
                     if (a_account == null) break; // the exception handling itself is handled in promptForUserAccount
 
                     System.out.println("Account found - Enter dollar amount to deposit: ");
-                    double a_deposit_amount= Double.parseDouble(stdin.nextLine());
-
+                    try{
+                        double a_deposit_amount= Double.parseDouble(stdin.nextLine());
+                        if (a_depost_amount <= 0){
+                            System.out.println("Deposit amount must be positive");
+                        }
+                        //double check please 
                     // NEEDS ADDING VALIDATION FOR IF AMOUNT TO WITHDRAW IS POSITIVE, AND THROW EXCEPTION IF NEEDED
 
                     a_account.depositAmount(a_deposit_amount);
