@@ -1,5 +1,6 @@
 package assignment_3;
-
+//four exception classes 
+//invalid password exception
  class InvalidPasswordFormatException extends Exception {
 
      public InvalidPasswordFormatException(String par1ErrorMessage) {
@@ -7,7 +8,7 @@ package assignment_3;
      }
 
 }
-
+//negative dollar amount exception 
 class NegativeDollarAmountException extends Exception {
 
 
@@ -16,7 +17,7 @@ class NegativeDollarAmountException extends Exception {
     }
 
 }
-
+//insufficient funds exception 
 class InsufficientFundsException extends Exception {
 
 
@@ -28,7 +29,7 @@ class InsufficientFundsException extends Exception {
 
 class CustomerAccountNotFoundException extends Exception {
 
-
+//customer account not found exception 
     public CustomerAccountNotFoundException(String par1ErrorMessage) {
         super(par1ErrorMessage);
     }
