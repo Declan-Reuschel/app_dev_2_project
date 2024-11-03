@@ -1,19 +1,24 @@
 package assignment_3;
 
 public class BankAccount {
-
+//string, private customer name 
     private String customerFullName;
+    //int, private, unique account id 
     private int accountID;
+    //int, private, static number of accounts, initialized to 0
     private static int numberOfAccounts = 0;
 
+    //string, private, user id
     private String userID;
+    //string, private, login password
     private String userPassword;
+    //double, private account balance 
     private double accountBalance;
 
 
 
     public BankAccount(String par1Name, String par2UserID, String par3UserPassword) {
-
+//overloaded constructor 
         numberOfAccounts += 1;
 
         this.accountID = numberOfAccounts;
@@ -38,7 +43,7 @@ public class BankAccount {
     public int getAccountID() {
         return accountID;
     }
-
+//static method for number of accounts 
     public static int getNumberOfAccounts() {
         return numberOfAccounts;
     }
