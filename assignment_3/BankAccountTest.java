@@ -37,7 +37,7 @@ public class BankAccountTest {
 
                     try {
                         String password_val = checkPassword(n_user_password);
-                        if (password_val != password_val.length() <8 || !password.contains("*")) throw new InvalidPasswordFormatException("Password is invalid.");
+                        if (password_val.length() < 8 || !password_val.contains("*")) throw new InvalidPasswordFormatException("Password is invalid.");
                     } catch(InvalidPasswordFormatException invalidException) {
 
                     }
@@ -78,8 +78,8 @@ public class BankAccountTest {
                     if (a_account == null) break; // the exception handling itself is handled in promptForUserAccount
 
                     System.out.println("Account found - Enter dollar amount to deposit: ");
+                    double a_deposit_amount= Double.parseDouble(stdin.nextLine());
                     try {
-                        double a_deposit_amount= Double.parseDouble(stdin.nextLine());
                         if (a_deposit_amount <= 0){
                             System.out.println("Deposit amount must be positive");
                         }
