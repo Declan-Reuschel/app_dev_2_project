@@ -25,14 +25,14 @@ public class BankAccountTest {
             switch(user_response) {
                 case "1":
                     //create a new checkung account
-                    System.out.println("Enter new customer name: ");
+                    System.out.println("Enter Customer Name: ");
                     String n_customer_name = stdin.nextLine();
-                    System.out.println("Enter new user ID: ");
+                    System.out.println("Enter User ID: ");
                     String n_user_id= stdin.nextLine();
 
                     // NEEDS PASSWORD VALIDATION ADDED; EXCEPTION CLASS CREATED, BUT MUST BE THROWN AND HANDLED
 
-                    System.out.println("Enter new user password; password must be at least 8 characters, and include at least one asterisk '*' character: ");
+                    System.out.println("Enter User Password: ");
                     String n_user_password = stdin.nextLine();
 
                     try {
@@ -45,7 +45,7 @@ public class BankAccountTest {
                     Checking n_account = new Checking(n_customer_name, n_user_id, n_user_password);
                     bankAccounts.add(n_account);
 
-                    System.out.println("Account created! Returning to main menu...");
+                    System.out.println();
 
                     break;
                 case "2":
@@ -66,7 +66,7 @@ public class BankAccountTest {
 
                         BankAccount.decrementAccounts();
 
-                        System.out.println("Account deleted! Returning to main menu...");
+                        System.out.println();
                     } catch(CustomerAccountNotFoundException notFoundException) {
                         System.err.println(notFoundException.getMessage());
                     }
@@ -74,12 +74,10 @@ public class BankAccountTest {
                     break;
                 case "3":
                     //make a deposit 
-                    System.out.println("Option 3 - Make An Account Deposit...");
-
                     BankAccount a_account = promptForUserAccount();
                     if (a_account == null) break; // the exception handling itself is handled in promptForUserAccount
 
-                    System.out.println("Account found - Enter dollar amount to deposit: ");
+                    System.out.println("Enter Amount: ");
                     double a_deposit_amount= Double.parseDouble(stdin.nextLine());
                     try {
                         if (a_deposit_amount <= 0){
@@ -91,17 +89,13 @@ public class BankAccountTest {
 
                     a_account.depositAmount(a_deposit_amount);
 
-                    System.out.println("Deposit made! Returning to main menu...");
-
                     break;
                 case "4":
                     //make a withdrawl 
-                    System.out.println("Option 4 - Make An Account Withdrawal...");
-
                     BankAccount w_account = promptForUserAccount();
                     if (w_account == null) break; // the exception handling itself is handled in promptForUserAccount
 
-                    System.out.println("Account found; the balance is currently "+ String.format("%.2f",(w_account.getAccountBalance())) +" - Enter dollar amount to withdraw: ");
+                    System.out.println("Enter Amount: ");
                     double w_withdrawal_amount = Double.parseDouble(stdin.nextLine());
 
                     // NEEDS ADDING VALIDATION FOR IF AMOUNT TO WITHDRAW IS NEGATIVE, AND THROW EXCEPTION IF NEEDED
@@ -109,29 +103,25 @@ public class BankAccountTest {
 
                     w_account.withdrawAmount(w_withdrawal_amount);
 
-                    System.out.println("Withdrawal made! Returning to main menu...");
+                    System.out.println();
 
                     break;
                 case "5":
                     //check account balance 
-                    System.out.println("Option 5 - Check An Account Balance...");
-
                     BankAccount p_account = promptForUserAccount();
                     if (p_account == null) break; // the exception handling itself is handled in promptForUserAccount
 
-                    System.out.println("===Account Information===");
                     System.out.println("Customer Name: " + p_account.getCustomerFullName());
-                    System.out.println("Account #: " + Integer.toString(p_account.getAccountID()));
+                    System.out.println("Account Number: " + Integer.toString(p_account.getAccountID()));
                     System.out.println("Account Balance: " + String.format("%.2f",(p_account.getAccountBalance())));
 
                     if (p_account instanceof Checking) {
                         System.out.println("Account Type: Checking");
-                        System.out.println("Account Balance: " + String.format("%.2f",((Checking) p_account).getDailyWithdrawalLimit()));
+                        System.out.println("Account Daily Withdrawal Limit: " + String.format("%.2f",((Checking) p_account).getDailyWithdrawalLimit()));
                     }
 
-                    System.out.println("=========================");
+                    System.out.println();
 
-                    System.out.println("Information displayed. Returning to main menu...");
                     break;
                     //terminate program 
                 case "6":
