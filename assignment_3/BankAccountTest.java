@@ -36,8 +36,8 @@ public class BankAccountTest {
                     String n_user_password = stdin.nextLine();
 
                     try {
-                        string password_val = checkPassword( n_user_password):
-                            if (password_val != password.length() <8 || !password.contains("*")) throw new InvalidPasswordFormatException("Password is invalid."):
+                        String password_val = checkPassword(n_user_password);
+                        if (password_val != password_val.length() <8 || !password.contains("*")) throw new InvalidPasswordFormatException("Password is invalid.");
                     } catch(InvalidPasswordFormatException invalidException) {
 
                     }
@@ -80,10 +80,10 @@ public class BankAccountTest {
                     System.out.println("Account found - Enter dollar amount to deposit: ");
                     try {
                         double a_deposit_amount= Double.parseDouble(stdin.nextLine());
-                        if (a_depost_amount <= 0){
+                        if (a_deposit_amount <= 0){
                             System.out.println("Deposit amount must be positive");
                         }
-                    } catch {}
+                    } catch (CustomerAccountNotFoundException notFoundException) {}
                         //double check please 
                     // NEEDS ADDING VALIDATION FOR IF AMOUNT TO WITHDRAW IS POSITIVE, AND THROW EXCEPTION IF NEEDED
 
