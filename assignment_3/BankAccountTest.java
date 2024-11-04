@@ -58,7 +58,9 @@ public class BankAccountTest {
                     try {
                         int d_account_index = searchUserAccount(d_user_id, d_user_password);
 
-                        if (d_account_index == -1) throw new CustomerAccountNotFoundException("Account not found! Returning to main menu...");
+                        if (d_account_index == -1) {
+                            throw new CustomerAccountNotFoundException("Account not found! Returning to main menu...");
+                        }
 
                         bankAccounts.remove(d_account_index);
 
@@ -83,7 +85,7 @@ public class BankAccountTest {
                         if (a_deposit_amount <= 0){
                             System.out.println("Deposit amount must be positive");
                         }
-                    } catch (CustomerAccountNotFoundException notFoundException) {}
+                    } catch (Exception e) {}
                         //double check please 
                     // NEEDS ADDING VALIDATION FOR IF AMOUNT TO WITHDRAW IS POSITIVE, AND THROW EXCEPTION IF NEEDED
 
@@ -139,6 +141,11 @@ public class BankAccountTest {
                     System.out.println("Error: Please enter a valid choice (1 thru 6)\n");
             }
         }
+    }
+
+    //temporary shim to get this to compile
+    public static String checkPassword(String password) {
+        return password;
     }
 
 
