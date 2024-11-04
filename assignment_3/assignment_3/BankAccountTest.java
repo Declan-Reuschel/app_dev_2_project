@@ -101,8 +101,16 @@ public class BankAccountTest {
                     System.out.println("Enter Amount: ");
                     double w_withdrawal_amount = Double.parseDouble(stdin.nextLine());
 
-                    // NEEDS ADDING VALIDATION FOR IF AMOUNT TO WITHDRAW IS NEGATIVE, AND THROW EXCEPTION IF NEEDED
-                    // NEEDS ADDING VALIDATION FOR IF AMOUNT TO WITHDRAW IS GREATER THAN THE BALANCE, AND THROW EXCEPTION IF NEEDED
+                    try {
+                        if (w_withdrawal_amount < 0) {
+                            throw new NegativeDollarAmountException("Deposit amount must be positive");
+                        } else if (w_withdrawal_amount > w_account.getAccountBalance()) {
+                            throw new InsufficientFundsException("Deposit amount must be positive");
+                        }
+                    } catch (Exception e) {
+                        System.err.println(e.getMessage());
+                        break;
+                    }
 
                     w_account.withdrawAmount(w_withdrawal_amount);
 
