@@ -39,7 +39,8 @@ public class BankAccountTest {
                         String password_val = checkPassword(n_user_password);
                         if (password_val.length() < 8 || !password_val.contains("*")) throw new InvalidPasswordFormatException("Password is invalid.");
                     } catch(InvalidPasswordFormatException invalidException) {
-
+                        System.err.println(invalidException.getMessage());
+                        break;
                     }
 
                     Checking n_account = new Checking(n_customer_name, n_user_id, n_user_password);
@@ -69,6 +70,7 @@ public class BankAccountTest {
                         System.out.println();
                     } catch(CustomerAccountNotFoundException notFoundException) {
                         System.err.println(notFoundException.getMessage());
+                        break;
                     }
 
                     break;
@@ -80,11 +82,12 @@ public class BankAccountTest {
                     System.out.println("Enter Amount: ");
                     double a_deposit_amount= Double.parseDouble(stdin.nextLine());
                     try {
-                        if (a_deposit_amount <= 0){
+                        if (a_deposit_amount < 0){
                             throw new NegativeDollarAmountException("Deposit amount must be positive");
                         }
                     } catch (NegativeDollarAmountException negativeException) {
                         System.err.println(negativeException.getMessage());
+                        break;
                     }
 
                     a_account.depositAmount(a_deposit_amount);
