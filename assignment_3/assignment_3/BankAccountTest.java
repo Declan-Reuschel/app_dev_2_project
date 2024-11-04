@@ -36,8 +36,7 @@ public class BankAccountTest {
                     String n_user_password = stdin.nextLine();
 
                     try {
-                        String password_val = checkPassword(n_user_password);
-                        if (password_val.length() < 8 || !password_val.contains("*")) throw new InvalidPasswordFormatException("\nError: Must Enter a Valid Password\nInvalidPasswordFormatException: Invalid Password Format\n");
+                        if (n_user_password.length() < 8 || !n_user_password.contains("*")) throw new InvalidPasswordFormatException("\nError: Must Enter a Valid Password\nInvalidPasswordFormatException: Invalid Password Format\n");
                     } catch(InvalidPasswordFormatException invalidException) {
                         System.err.println(invalidException.getMessage());
                         break;
@@ -145,12 +144,6 @@ public class BankAccountTest {
             }
         }
     }
-
-    //temporary shim to get this to compile
-    public static String checkPassword(String password) {
-        return password;
-    }
-
 
     public static BankAccount promptForUserAccount() {
         try {
