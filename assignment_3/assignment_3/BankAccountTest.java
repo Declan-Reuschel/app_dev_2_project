@@ -37,7 +37,7 @@ public class BankAccountTest {
 
                     try {
                         String password_val = checkPassword(n_user_password);
-                        if (password_val.length() < 8 || !password_val.contains("*")) throw new InvalidPasswordFormatException("Password is invalid.");
+                        if (password_val.length() < 8 || !password_val.contains("*")) throw new InvalidPasswordFormatException("Password is invalid\n");
                     } catch(InvalidPasswordFormatException invalidException) {
                         System.err.println(invalidException.getMessage());
                         break;
@@ -105,7 +105,7 @@ public class BankAccountTest {
                         if (w_withdrawal_amount < 0) {
                             throw new NegativeDollarAmountException("Deposit amount must be positive");
                         } else if (w_withdrawal_amount > w_account.getAccountBalance()) {
-                            throw new InsufficientFundsException("Deposit amount must be positive");
+                            throw new InsufficientFundsException("Deposit amount cannot be greater than current balance");
                         }
                     } catch (Exception e) {
                         System.err.println(e.getMessage());
@@ -159,7 +159,7 @@ public class BankAccountTest {
 
             int g_account_index = searchUserAccount(g_user_id, g_user_password);
 
-            if (g_account_index == -1) throw new CustomerAccountNotFoundException("Account not found! Returning to main menu...");
+            if (g_account_index == -1) throw new CustomerAccountNotFoundException("Account not found\n");
 
             return bankAccounts.get(g_account_index);
         } catch(CustomerAccountNotFoundException notFoundException) {
