@@ -81,11 +81,11 @@ public class BankAccountTest {
                     double a_deposit_amount= Double.parseDouble(stdin.nextLine());
                     try {
                         if (a_deposit_amount <= 0){
-                            System.out.println("Deposit amount must be positive");
+                            throw new NegativeDollarAmountException("Deposit amount must be positive");
                         }
-                    } catch (Exception e) {}
-                        //double check please 
-                    // NEEDS ADDING VALIDATION FOR IF AMOUNT TO WITHDRAW IS POSITIVE, AND THROW EXCEPTION IF NEEDED
+                    } catch (NegativeDollarAmountException negativeException) {
+                        System.err.println(negativeException.getMessage());
+                    }
 
                     a_account.depositAmount(a_deposit_amount);
 
