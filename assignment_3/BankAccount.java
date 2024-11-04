@@ -1,9 +1,9 @@
 package assignment_3;
 
 public class BankAccount {
-//string, private customer name 
+    //string, private customer name
     private String customerFullName;
-    //int, private, unique account id 
+    //int, private, unique account id
     private int accountID;
     //int, private, static number of accounts, initialized to 0
     private static int numberOfAccounts = 0;
@@ -12,13 +12,11 @@ public class BankAccount {
     private String userID;
     //string, private, login password
     private String userPassword;
-    //double, private account balance 
+    //double, private account balance
     private double accountBalance;
 
-
-
+    //overloaded constructor
     public BankAccount(String par1Name, String par2UserID, String par3UserPassword) {
-//overloaded constructor 
         numberOfAccounts += 1;
 
         this.accountID = numberOfAccounts;
@@ -27,7 +25,6 @@ public class BankAccount {
         this.userPassword = par3UserPassword;
 
         this.accountBalance = 0;
-
     }
 
     public void depositAmount(double par1Deposit) {
@@ -39,11 +36,11 @@ public class BankAccount {
     }
 
     // getters/static methods specific for account ID and number of accounts
-
     public int getAccountID() {
         return accountID;
     }
-//static method for number of accounts 
+    
+    //static method for number of accounts
     public static int getNumberOfAccounts() {
         return numberOfAccounts;
     }
@@ -53,7 +50,6 @@ public class BankAccount {
     }
 
     // getters/setters
-
     public String getCustomerFullName() {
         return customerFullName;
     }
@@ -85,6 +81,4 @@ public class BankAccount {
     public void setAccountBalance(double accountBalance) {
         this.accountBalance = accountBalance;
     }
-
-
 }
