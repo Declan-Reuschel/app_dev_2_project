@@ -37,7 +37,7 @@ public class BankAccountTest {
 
                     try {
                         String password_val = checkPassword(n_user_password);
-                        if (password_val.length() < 8 || !password_val.contains("*")) throw new InvalidPasswordFormatException("Password is invalid\n");
+                        if (password_val.length() < 8 || !password_val.contains("*")) throw new InvalidPasswordFormatException("Error: Must Enter a Valid Password\nInvalidPasswordFormatException: Invalid Password Format");
                     } catch(InvalidPasswordFormatException invalidException) {
                         System.err.println(invalidException.getMessage());
                         break;
@@ -60,7 +60,7 @@ public class BankAccountTest {
                         int d_account_index = searchUserAccount(d_user_id, d_user_password);
 
                         if (d_account_index == -1) {
-                            throw new CustomerAccountNotFoundException("Account not found! Returning to main menu...");
+                            throw new CustomerAccountNotFoundException("Error: Must Enter a Valid User ID and Password\nCustomerAccountNotFoundException: Customer Account Not Found");
                         }
 
                         bankAccounts.remove(d_account_index);
@@ -83,7 +83,7 @@ public class BankAccountTest {
                     double a_deposit_amount= Double.parseDouble(stdin.nextLine());
                     try {
                         if (a_deposit_amount < 0){
-                            throw new NegativeDollarAmountException("Deposit amount must be positive");
+                            throw new NegativeDollarAmountException("Error: Must Enter a Positive Dollar Amount\nNegativeDollarAmountException: Negative Dollar Amount");
                         }
                     } catch (NegativeDollarAmountException negativeException) {
                         System.err.println(negativeException.getMessage());
@@ -103,9 +103,9 @@ public class BankAccountTest {
 
                     try {
                         if (w_withdrawal_amount < 0) {
-                            throw new NegativeDollarAmountException("Deposit amount must be positive");
+                            throw new NegativeDollarAmountException("Error: Must Enter a Positive Dollar Amount\nNegativeDollarAmountException: Negative Dollar Amount");
                         } else if (w_withdrawal_amount > w_account.getAccountBalance()) {
-                            throw new InsufficientFundsException("Deposit amount cannot be greater than current balance");
+                            throw new InsufficientFundsException("Error: Must WIthdrawal an Amount Less Than Your Balance\nInsufficientFundsException: Insufficient Funds");
                         }
                     } catch (Exception e) {
                         System.err.println(e.getMessage());
